@@ -1,0 +1,20 @@
+spring:
+  devtools.restart.enabled: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/myblog?characterEncoding=utf-8&serverTimezone=UTC
+mybatis:
+    # mapper.xml包地址
+    mapper-locations: classpath:mapper/*.xml
+    # pojo生成包地址
+    type-aliases-package: com.myringle.blog.pojo   #xml中的resultType='user"
+    configuration:
+      map-underscore-to-camel-case: true
+server:
+  port: 8088 #驼峰命名
+logging:
+  file:
+    path:  /logs
+    name: my.log
